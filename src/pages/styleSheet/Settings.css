@@ -1,0 +1,7 @@
+.settings-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  justify-content: center;
+}
