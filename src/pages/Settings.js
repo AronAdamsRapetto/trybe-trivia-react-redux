@@ -15,7 +15,6 @@ class Settings extends React.Component {
   async componentDidMount() {
     const response = await fetch('https://opentdb.com/api_category.php');
     const data = await response.json();
-    console.log(data);
     this.setState({ categories: data.trivia_categories });
   }
 
