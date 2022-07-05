@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { updateUrl } from '../redux/actions';
 import './styleSheet/Settings.css';
 
 class Settings extends React.Component {
@@ -20,6 +23,14 @@ class Settings extends React.Component {
     this.setState({ [name]: value });
   }
 
+  handleClick = () => {
+    const { category, difficulty, type } = this.state;
+    const { changeUrl, history } = this.props;
+
+    changeUrl({ category, difficulty, type });
+    history.push('/');
+  }
+
   render() {
     const { categories, category, difficulty, type } = this.state;
     return (
@@ -37,7 +48,7 @@ class Settings extends React.Component {
               <option value="">All</option>
               {
                 categories.map(({ id, name }) => (
-                  <option key={ id } value={ id }>{ name }</option>
+                  <option key={ id } value={ `&category=${id}` }>{ name }</option>
                 ))
               }
             </select>
@@ -51,6 +62,9 @@ class Settings extends React.Component {
               id="select-difficulty"
             >
               <option value="">All</option>
+              <option value="&difficulty=easy">Fácil</option>
+              <option value="&difficulty=medium">Médio</option>
+              <option value="&difficulty=hard">Dificil</option>
             </select>
           </label>
           <label htmlFor="select-type">
@@ -62,12 +76,26 @@ class Settings extends React.Component {
               id="select-type"
             >
               <option value="">All</option>
+              <option value="&type=multiple">Múltipla escolha</option>
+              <option value="&type=boolean">Verdadeiro ou Falso</option>
             </select>
           </label>
+          <button type="button" onClick={ this.handleClick }>Salvar</button>
         </section>
       </main>
     );
   }
 }
 
-export default Settings;
+Settings.propTypes = {
+  changeUrl: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  changeUrl: (state) => dispatch(updateUrl(state)),
+});
+
+export default connect(null, mapDispatchToProps)(Settings);

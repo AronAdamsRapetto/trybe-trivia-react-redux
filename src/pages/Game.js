@@ -17,8 +17,8 @@ class Game extends Component {
   }
 
   async componentDidMount() {
-    const { history } = this.props;
-    const { results } = await fetchTriviaQuestions();
+    const { history, url } = this.props;
+    const { results } = await fetchTriviaQuestions(url);
     if (!results.length) {
       localStorage.removeItem('token');
       history.push('/');
@@ -110,6 +110,7 @@ const mapStateToProps = (state) => ({
     score: state.player.score,
     picture: state.player.gravatarEmail,
   },
+  url: state.player.urlGame,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -124,6 +125,7 @@ Game.propTypes = {
   ranking: PropTypes.shape({
     picture: PropTypes.string,
   }).isRequired,
+  url: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);
