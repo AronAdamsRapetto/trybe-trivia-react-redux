@@ -2,6 +2,50 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 50vh;
+  height: 70vh;
   justify-content: center;
+}
+
+.settings-container label {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  justify-content: space-between;
+  margin: 5px 0;
+  width: 30%;
+}
+
+.settings-container h1 {
+  margin-bottom: 40px;
+}
+
+.settings-container label select {
+  background-color: #430387;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  padding: 8px 0;
+  width: 150px;
+}
+
+.settings-container button {
+  background-color: #fc008f;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0.2em #a80160;
+  color: #430387;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 40px;
+  padding: 16px;
+  text-align: center;
+  text-shadow: -1px -1px #a80160 , 1px 1px #430387;
+  width: 100px;
+}
+
+.settings-container button:hover {
+  background-color: #c70071;
+  cursor: pointer;
 }
