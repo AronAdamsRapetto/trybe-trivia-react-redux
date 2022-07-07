@@ -1,0 +1,54 @@
+.ranking {
+  background: linear-gradient(52deg, #1e427e 0%, #290044 40%, #8a004e 100%);
+  background-position: top;
+  background-size: cover;
+  color: white;
+  height: 100%;
+  margin: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.ranking-box {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 2px solid white;
+  border-radius: 8px;
+  box-shadow: 0.2em 0.2em #290044;
+  margin: auto;
+  padding: 3px;
+  width: 80%;
+}
+
+.ranked-user {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  padding: 3px;
+}
+
+.ranked-user-image {
+  border: 1px solid white;
+  margin-right: 20px;
+}
+
+.ranked-user-score {
+  flex-grow: 1;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.button-home {
+  background-color: #430387;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0.2em #7e06ff;
+  color: #fc008f;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 2em;
+  padding: 16px;
+  text-align: center;
+  text-shadow: -1px -1px #7e06ff , 1px 1px #fc008f;
+  width: 180px;
+}
