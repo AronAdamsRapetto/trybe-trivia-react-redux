@@ -63,11 +63,11 @@ class Login extends Component {
           <input
             type="text"
             id="nome-input"
-            data-testid="input-player-name"
             name="nome"
             value={ nome }
             onChange={ handleChange }
             placeholder="Name"
+            data-testid="input-player-name"
           />
         </label>
         <label htmlFor="email-input">
@@ -86,7 +86,7 @@ class Login extends Component {
           data-testid="btn-play"
           onClick={ handleClick }
           disabled={ isButtonDisabled }
-          className="button-play"
+          // className="button-play"
         >
           Play
         </button>
