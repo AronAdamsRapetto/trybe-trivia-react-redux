@@ -14,6 +14,7 @@ class Login extends Component {
     isButtonDisabled: true,
   }
 
+  // Funciona tchê
   verifyInputs = () => {
     const { nome, email } = this.state;
     if (nome.length < 1 || email.length < 1) {
