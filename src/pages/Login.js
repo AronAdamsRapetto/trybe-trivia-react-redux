@@ -14,7 +14,6 @@ class Login extends Component {
     isButtonDisabled: true,
   }
 
-  // Funciona tchê
   verifyInputs = () => {
     const { nome, email } = this.state;
     if (nome.length < 1 || email.length < 1) {
@@ -86,7 +85,7 @@ class Login extends Component {
           data-testid="btn-play"
           onClick={ handleClick }
           disabled={ isButtonDisabled }
-          // className="button-play"
+          className="button-play"
         >
           Play
         </button>
