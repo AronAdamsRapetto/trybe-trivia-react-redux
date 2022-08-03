@@ -13,6 +13,7 @@ class Header extends React.Component {
         <img src={ logo } className="header-logo" alt="logo" />
         <div className="player-contaniner">
           <div className="player-info-container">
+            {/* Funciona tchê */}
             <p data-testid="header-player-name">
               { name }
             </p>
