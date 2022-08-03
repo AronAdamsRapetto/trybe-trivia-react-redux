@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { actGetPlayer } from '../redux/actions';
-import { initGame } from '../service/localStoragePlayer';
+import initGame from '../service/localStoragePlayer';
 import logo from '../trivia.png';
 import '../Components/styleSheet/Login.css';
 
@@ -101,8 +101,14 @@ class Login extends Component {
 Login.propTypes = {
   getPlayer: PropTypes.func.isRequired,
   history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
+    push: PropTypes.func,
+  }),
+};
+
+Login.defaultProps = {
+  history: {
+    push: PropTypes.func,
+  },
 };
 
 const mapDispatchToProps = (dispatch) => ({

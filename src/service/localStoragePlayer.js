@@ -1,7 +1,3 @@
-if (!localStorage.getItem('token')) {
-  localStorage.setItem('token', '');
-}
+const initGame = (token) => localStorage.setItem('token', token);
 
-export const readStorageData = () => localStorage.getItem('token');
-
-export const initGame = (token) => localStorage.setItem('token', token);
+export default initGame;

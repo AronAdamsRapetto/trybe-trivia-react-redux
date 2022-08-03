@@ -29,7 +29,6 @@ class Game extends Component {
     });
   }
 
-  // Evento de próxima questão
   nextQuestion = () => {
     const {
       props: { history },
@@ -119,13 +118,19 @@ const mapDispatchToProps = (dispatch) => ({
 
 Game.propTypes = {
   history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
+    push: PropTypes.func,
+  }),
   updateScore: PropTypes.func.isRequired,
   ranking: PropTypes.shape({
     picture: PropTypes.string,
   }).isRequired,
   url: PropTypes.string.isRequired,
+};
+
+Game.defaultProps = {
+  history: {
+    push: PropTypes.func,
+  },
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);

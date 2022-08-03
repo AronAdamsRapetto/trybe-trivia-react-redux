@@ -19,7 +19,7 @@ class Timer extends React.Component {
     const { time } = this.props;
     return (
       <div>
-        <p className="timer">{ time }</p>
+        <p className="timer" data-testid="timer-question">{ time }</p>
       </div>
     );
   }

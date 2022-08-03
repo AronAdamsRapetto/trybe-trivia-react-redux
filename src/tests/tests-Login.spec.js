@@ -2,56 +2,67 @@ import React from "react";
 import renderWithRouterAndRedux from "./helpers/renderWithRouterAndRedux";
 import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import fetchMock from 'fetch-mock-jest';
 import Login from "../pages/Login";
-import App from '../App';
+import App from "../App";
+import tokenResponse from "./mocks/token";
+import questionsResponse from "./mocks/questions";
 
-describe('Testa a página de Login', () => {
-    it('Testa se os inputs são renderizados na tela', () => {
-        renderWithRouterAndRedux(<Login />);
+describe("Testa a página de Login", () => {
+  it("Testa se os inputs são renderizados na tela", () => {
+    renderWithRouterAndRedux(<Login />);
 
-        const name = screen.getByTestId('input-player-name');
-        const email = screen.getByTestId('input-gravatar-email');
+    const name = screen.getByTestId("input-player-name");
+    const email = screen.getByTestId("input-gravatar-email");
 
-        expect(name).toBeInTheDocument();
-        expect(email).toBeInTheDocument();
+    expect(name).toBeInTheDocument();
+    expect(email).toBeInTheDocument();
 
-        expect(name).toHaveValue('');
-        expect(email).toHaveValue('');
-    })
+    expect(name).toHaveValue("");
+    expect(email).toHaveValue("");
+  });
 
-    it('Testa se o botão é habilitado após preencher os inputs', () => {
-        renderWithRouterAndRedux(<Login />);
+  it("Testa se o botão é habilitado após preencher os inputs", () => {
+    renderWithRouterAndRedux(<Login />);
 
-        const button = screen.getByTestId('btn-play');
+    const button = screen.getByTestId("btn-play");
 
-        expect(button).toBeDisabled();
+    expect(button).toBeDisabled();
 
-        const name = screen.getByTestId('input-player-name');
-        const email = screen.getByTestId('input-gravatar-email');
+    const name = screen.getByTestId("input-player-name");
+    const email = screen.getByTestId("input-gravatar-email");
 
-        userEvent.type(name, 'meunome');
-        userEvent.type(email, 'meuemail');
+    userEvent.type(name, "meunome");
+    userEvent.type(email, "meuemail");
 
-        expect(button).toBeEnabled();
-    })
+    expect(button).toBeEnabled();
+  });
 
-   it('Testa se é feita uma requisição à API para obter o token', async () => {
-        renderWithRouterAndRedux(<App />);
+  it("Testa se é feita uma requisição à API para obter o token", async () => {
+    jest.spyOn(global, "fetch").mockImplementation(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(questionsResponse),
+      })
+    );
 
-        const button = screen.getByTestId('btn-play')
-        const name = screen.getByTestId('input-player-name');
-        const email = screen.getByTestId('input-gravatar-email');
+    jest.spyOn(global, "fetch").mockImplementationOnce(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(tokenResponse),
+      })
+    );
 
-        userEvent.type(name, 'meunome');
-        userEvent.type(email, 'meuemail');
+    const { history } = renderWithRouterAndRedux(<App />);
 
-        fetchMock.getOnce('https://opentdb.com/api_token.php?command=request', {
-        body: { token: 'token' },
-        }); 
+    const button = screen.getByTestId("btn-play");
+    const name = screen.getByTestId("input-player-name");
+    const email = screen.getByTestId("input-gravatar-email");
 
-        userEvent.click(button);
-        
-        await waitFor(() => expect(fetchMock.called()).toBeTruthy());
-    })
-})
+    userEvent.type(name, "meunome");
+    userEvent.type(email, "meuemail");
+
+    userEvent.click(button);
+
+    await waitFor(() => expect(global.fetch).toBeCalled());
+
+    expect(history.location.pathname).toBe('/game');
+  });
+});

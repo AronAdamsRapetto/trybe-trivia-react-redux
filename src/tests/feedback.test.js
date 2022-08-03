@@ -1,6 +1,6 @@
 import React from 'react';
 import renderWithRouterAndRedux from './helpers/renderWithRouterAndRedux';
-import { screen, waitFor } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Feedback from '../pages/Feedback';
 import App from '../App';
@@ -8,9 +8,8 @@ import App from '../App';
 describe('Teste a página de Feedback', () => {
   it('01 - Renderiza a página de Feedback', () => {
     renderWithRouterAndRedux(<Feedback />);
-    // const feedbackPage = screen.getByRole('heading', { level: 1 });
-    const feedbackPage = screen.getByText(/feedback page/i);
-    expect(feedbackPage).toHaveTextContent('Feedback Page');
+    const feedbackPage = screen.getByText(/feedback/i);
+    expect(feedbackPage).toHaveTextContent('Feedback');
   });
 
   it('02 - Renderiza na tela nome, gravatar e score do jogador', () => {
@@ -39,15 +38,17 @@ describe('Teste a página de Feedback', () => {
 
   it('06 - Testa se ao clicar no botão \'Ranking\' a navegação acontece normalmente', () => {
     localStorage.setItem('ranking', JSON.stringify([{ name: "Usuário", score: 100, picture: "https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e"}]));
-    // renderWithRouterAndRedux(<App />);
+
     const { history } = renderWithRouterAndRedux(<App />);
     history.push('/feedback');
+
     const rankingPage = screen.getByTestId(/btn-ranking/i);
+
     userEvent.click(rankingPage);
+
     const backBtn = screen.getByTestId(/btn-go-home/i);
     expect(backBtn).toBeInTheDocument();
-    //expect(window.location.pathname).toBe('/ranking');
-    // expect(screen.getByText(/voltar ao início/i)).toBeInTheDocument();
+    expect(history.location.pathname).toBe('/ranking');
   });
 
   it('07 - Testa se ao clicar no botão \'Jogar Novamente\' a navegação acontece normalmente', async () => {
@@ -58,4 +59,20 @@ describe('Teste a página de Feedback', () => {
     const inputs = screen.getByRole('button', {name: /play/i});
     expect(inputs).toBeInTheDocument();
   });
+
+  it('08 - Testa se a mensagem de feedback é renderizada corretamente', () => {
+    const initialReduxState = {
+      player: {
+        name: '',
+        assertions: 3,
+        score: 100,
+        gravatarEmail: '',
+        urlGame: '',
+      }
+    }
+    const { history } = renderWithRouterAndRedux(<App />, initialReduxState);
+    history.push('/feedback');
+    
+    expect(screen.getByRole('heading', { name: /well done!/i })).toBeInTheDocument();
+  })
 });
