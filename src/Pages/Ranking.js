@@ -40,7 +40,7 @@ class Ranking extends React.Component {
             </div>
           ))}
         </div>
-        <Link to="/">
+        <Link to="/trybe-trivia-react-redux">
           <button
             className="button-home"
             type="button"

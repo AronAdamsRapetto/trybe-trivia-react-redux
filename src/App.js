@@ -11,11 +11,11 @@ export default function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path="/feedback" component={ Feedback } />
-        <Route path="/game" component={ Game } />
-        <Route path="/settings" component={ Settings } />
-        <Route exact path="/" component={ Login } />
-        <Route path="/ranking" component={ Ranking } />
+        <Route path="/trybe-trivia-react-redux/feedback" component={ Feedback } />
+        <Route path="/trybe-trivia-react-redux/game" component={ Game } />
+        <Route path="/trybe-trivia-react-redux/settings" component={ Settings } />
+        <Route exact path="/trybe-trivia-react-redux" component={ Login } />
+        <Route path="/trybe-trivia-react-redux/ranking" component={ Ranking } />
       </Switch>
     </div>
   );

@@ -27,7 +27,7 @@ class Settings extends React.Component {
     const { changeUrl, history } = this.props;
 
     changeUrl({ category, difficulty, type });
-    history.push('/');
+    history.push('/trybe-trivia-react-redux');
   }
 
   render() {

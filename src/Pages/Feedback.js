@@ -37,7 +37,7 @@ class Feedback extends React.Component {
           <span data-testid="feedback-total-question">{ assertions }</span>
         </section>
         <div className="buttons">
-          <Link to="/ranking">
+          <Link to="/trybe-trivia-react-redux/ranking">
             <button
               type="button"
               data-testid="btn-ranking"
@@ -46,7 +46,7 @@ class Feedback extends React.Component {
               VER RANKING
             </button>
           </Link>
-          <Link to="/">
+          <Link to="/trybe-trivia-react-redux">
             <button
               type="button"
               data-testid="btn-play-again"

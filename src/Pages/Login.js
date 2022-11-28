@@ -40,7 +40,7 @@ class Login extends React.Component {
     const token = await this.fetchToken();
     initGame(token);
     getPlayer(nome, email);
-    history.push('/game');
+    history.push('/trybe-trivia-react-redux/game');
   }
 
   render() {
@@ -89,7 +89,7 @@ class Login extends React.Component {
         >
           Play
         </button>
-        <Link to="/settings">
+        <Link to="/trybe-trivia-react-redux/settings">
           <button type="button" data-testid="btn-settings" className="button-settings">
             Configurações
           </button>

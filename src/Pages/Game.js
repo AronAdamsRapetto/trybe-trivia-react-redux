@@ -36,7 +36,7 @@ class Game extends React.Component {
     const { renderIndex } = this.state;
     const LAST_INDEX = 4;
     if (renderIndex === LAST_INDEX) {
-      history.push('/feedback');
+      history.push('/trybe-trivia-react-redux/feedback');
       this.addPlayerToStorage();
     } else {
       this.setState((prevState) => ({
