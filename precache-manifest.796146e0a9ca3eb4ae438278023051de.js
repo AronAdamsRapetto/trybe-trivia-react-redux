@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "19572aece77985b4754a91eedb30391e",
+    "revision": "a7405b0d0ffa6b9e55edbeb9e6e05ffd",
     "url": "/trybe-trivia-react-redux/index.html"
   },
   {
-    "revision": "5c36e123f0f0764a5e39",
+    "revision": "6b49b895d29e4d7dbef2",
     "url": "/trybe-trivia-react-redux/static/css/main.f1980e21.chunk.css"
   },
   {
@@ -16,12 +16,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/trybe-trivia-react-redux/static/js/2.a4abf794.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5c36e123f0f0764a5e39",
-    "url": "/trybe-trivia-react-redux/static/js/main.a62f0ac8.chunk.js"
+    "revision": "6b49b895d29e4d7dbef2",
+    "url": "/trybe-trivia-react-redux/static/js/main.faad5805.chunk.js"
   },
   {
     "revision": "4e0e34f265fae8f33b01b27ae29d9d6f",
-    "url": "/trybe-trivia-react-redux/static/js/main.a62f0ac8.chunk.js.LICENSE.txt"
+    "url": "/trybe-trivia-react-redux/static/js/main.faad5805.chunk.js.LICENSE.txt"
   },
   {
     "revision": "6e18cf76e34fcfb1ef33",

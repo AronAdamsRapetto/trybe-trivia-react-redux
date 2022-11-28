@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/trybe-trivia-react-redux/static/css/main.f1980e21.chunk.css",
-    "main.js": "/trybe-trivia-react-redux/static/js/main.a62f0ac8.chunk.js",
-    "main.js.map": "/trybe-trivia-react-redux/static/js/main.a62f0ac8.chunk.js.map",
+    "main.js": "/trybe-trivia-react-redux/static/js/main.faad5805.chunk.js",
+    "main.js.map": "/trybe-trivia-react-redux/static/js/main.faad5805.chunk.js.map",
     "runtime-main.js": "/trybe-trivia-react-redux/static/js/runtime-main.02273cd9.js",
     "runtime-main.js.map": "/trybe-trivia-react-redux/static/js/runtime-main.02273cd9.js.map",
     "static/js/2.a4abf794.chunk.js": "/trybe-trivia-react-redux/static/js/2.a4abf794.chunk.js",
     "static/js/2.a4abf794.chunk.js.map": "/trybe-trivia-react-redux/static/js/2.a4abf794.chunk.js.map",
     "index.html": "/trybe-trivia-react-redux/index.html",
-    "precache-manifest.88793f7f59c1bc669a6542704bcbf62a.js": "/trybe-trivia-react-redux/precache-manifest.88793f7f59c1bc669a6542704bcbf62a.js",
+    "precache-manifest.796146e0a9ca3eb4ae438278023051de.js": "/trybe-trivia-react-redux/precache-manifest.796146e0a9ca3eb4ae438278023051de.js",
     "service-worker.js": "/trybe-trivia-react-redux/service-worker.js",
     "static/css/main.f1980e21.chunk.css.map": "/trybe-trivia-react-redux/static/css/main.f1980e21.chunk.css.map",
     "static/js/2.a4abf794.chunk.js.LICENSE.txt": "/trybe-trivia-react-redux/static/js/2.a4abf794.chunk.js.LICENSE.txt",
-    "static/js/main.a62f0ac8.chunk.js.LICENSE.txt": "/trybe-trivia-react-redux/static/js/main.a62f0ac8.chunk.js.LICENSE.txt",
+    "static/js/main.faad5805.chunk.js.LICENSE.txt": "/trybe-trivia-react-redux/static/js/main.faad5805.chunk.js.LICENSE.txt",
     "static/media/trivia.png": "/trybe-trivia-react-redux/static/media/trivia.466d153e.png"
   },
   "entrypoints": [
     "static/js/runtime-main.02273cd9.js",
     "static/js/2.a4abf794.chunk.js",
     "static/css/main.f1980e21.chunk.css",
-    "static/js/main.a62f0ac8.chunk.js"
+    "static/js/main.faad5805.chunk.js"
   ]
 }
