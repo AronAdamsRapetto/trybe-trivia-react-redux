@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -7,7 +7,7 @@ import initGame from '../service/localStoragePlayer';
 import logo from '../trivia.png';
 import '../Components/styleSheet/Login.css';
 
-class Login extends Component {
+class Login extends React.Component {
   state = {
     nome: '',
     email: '',

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import md5 from 'crypto-js/md5';
 import PropTypes from 'prop-types';
@@ -9,7 +9,7 @@ import { actUpdateScore } from '../redux/actions';
 import { saveScorePlayer } from '../service/localStorageRanking';
 import './styleSheet/Game.css';
 
-class Game extends Component {
+class Game extends React.Component {
   state = {
     questions: [],
     renderIndex: 0,
