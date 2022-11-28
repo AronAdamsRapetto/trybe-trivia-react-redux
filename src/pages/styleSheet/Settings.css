@@ -4,6 +4,8 @@
   flex-direction: column;
   height: 70vh;
   justify-content: center;
+  margin: auto;
+  width: 30vw;
 }
 
 .settings-container label {
@@ -12,7 +14,7 @@
   font-size: 18px;
   justify-content: space-between;
   margin: 5px 0;
-  width: 30%;
+  width: 100%;
 }
 
 .settings-container h1 {
@@ -26,7 +28,7 @@
   color: white;
   font-size: 15px;
   padding: 8px 0;
-  width: 150px;
+  width: 40%;
 }
 
 .settings-container button {
@@ -48,4 +50,11 @@
 .settings-container button:hover {
   background-color: #c70071;
   cursor: pointer;
+}
+
+@media screen and ( max-width : 716px ) {
+
+  .settings-container {
+    width: 220px;
+  }
 }

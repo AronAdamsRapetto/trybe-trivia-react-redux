@@ -100,7 +100,10 @@ class Question extends React.Component {
             updateTimer={ this.updateTimer }
           />
         </div>
-        <h2 data-testid="question-text">{ question }</h2>
+        <h2
+          data-testid="question-text"
+          dangerouslySetInnerHTML={ { __html: question } }
+        />
         <div className="answers-container" data-testid="answer-options">
           {
             answersList.map((answer, index) => {
@@ -113,8 +116,9 @@ class Question extends React.Component {
                     onClick={ () => calculateScore(true) }
                     className={ isAnswered ? 'correct' : 'no-border' }
                     disabled={ isTimeOut }
+                    dangerouslySetInnerHTML={ { __html: answer } }
                   >
-                    { answer }
+                    {/* { answer } */}
                   </button>
                 );
               }
@@ -126,8 +130,9 @@ class Question extends React.Component {
                   onClick={ () => calculateScore(false) }
                   className={ isAnswered ? 'wrong' : 'no-border' }
                   disabled={ isTimeOut }
+                  dangerouslySetInnerHTML={ { __html: answer } }
                 >
-                  { answer }
+                  {/* { answer } */}
                 </button>
               );
             })

@@ -1,18 +1,6 @@
-/*
-#fc008f
-#011769
-#430387
-#7A1379
-#290044
-*/
-
-/* .game-main-container {
-  background-color: #011769;
-  height: 100vh;
-} */
-
 main {
   background: linear-gradient(52deg, #1e427e 0%, #290044 40%, #8a004e 100%);
   color: white;
-  height: 100vh;
+  height: max-content;
+  min-height: 100vh;
 }

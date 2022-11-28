@@ -1,40 +1,32 @@
 .feedback {
   background: linear-gradient(52deg, #1e427e 0%, #290044 40%, #8a004e 100%);
-  background-position: top;
-  background-size: cover;
   color: white;
   height: 100%;
   margin: 0;
-  position: fixed;
-  width: 100%;
 }
 
-.button-ranking {
-  background-color: #fc008f;
+.button-play-again, .button-ranking {
   border: none;
   border-radius: 8px;
-  box-shadow: 0 0.2em #a80160;
-  color: #430387;
   cursor: pointer;
   font-size: 20px;
   font-weight: 700;
   padding: 16px;
   text-align: center;
+}
+
+.button-ranking {
+  background-color: #fc008f;
+  box-shadow: 0 0.2em #a80160;
+  color: #430387;
   text-shadow: -1px -1px #a80160 , 1px 1px #430387;
   width: 160px;
 }
 
 .button-play-again {
   background-color: #430387;
-  border: none;
-  border-radius: 8px;
   box-shadow: 0 0.2em #7e06ff;
   color: #fc008f;
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: 700;
-  padding: 16px;
-  text-align: center;
   text-shadow: -1px -1px #7e06ff , 1px 1px #fc008f;
   width: 180px;
 }
@@ -54,35 +46,49 @@
   justify-content: center;
 }
 
-.better {
+.better, .well-done {
   align-items: center;
   border: 1px solid white;
   display: flex;
-  flex-direction: row;
   font-family: Courier New , Courier , monospace;
   font-size: 30px;
   justify-content: center;
-  margin: 10px 500px;
-  padding: 15px;
+  margin: 10px auto;
+  padding: 15px 0;
+  width: 650px;
 }
 
-.well-done {
-  align-items: center;
-  border: 1px solid white;
-  display: flex;
-  flex-direction: row;
-  font-family: Courier New , Courier , monospace;
-  font-size: 30px;
-  justify-content: center;
-  margin: 10px 500px;
-  padding: 15px;
-}
-
-.sad-icon {
+.sad-icon, .happy-icon {
   font-size: 60px;
 }
 
-.happy-icon {
-  font-size: 60px;
+@media screen and ( max-width : 700px ) {
+
+  .better, .well-done {
+    font-size: 20px;
+    width: 92vw;
+  }
+
+  .sad-icon, .happy-icon {
+    font-size: 40px;
+  }
+}
+
+@media screen and ( max-width : 400px ) {
+
+  .sad-icon, .happy-icon {
+    font-size: 60px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}
+
+@media screen and ( max-width : 320px ) {
+
+  .points {
+    flex-direction: column;
+  }
 }
 
