@@ -48,7 +48,7 @@
   border-radius: 10px;
   color: white;
   font-size: 16px;
-  margin: 40px 10px;
+  margin: 20px 5px;
   padding: 12px 28px;
 }
 
@@ -76,4 +76,28 @@
   text-align: center;
   text-shadow: -1px -1px #a80160 , 1px 1px #430387;
   width: 100px;
+}
+
+@media screen and ( max-width : 476px ) {
+
+  .question-header-container {
+    flex-direction: column-reverse;
+  }
+
+  .question-header-container .timer {
+    align-self: inherit;
+  }
+
+  .question-info-container {
+    flex-direction: column;
+    margin: 5px 0 10px;
+  }
+
+  .question-container {
+    margin: 20px auto;
+  }
+
+  .next-button {
+    margin: 25px 0;
+  }
 }
