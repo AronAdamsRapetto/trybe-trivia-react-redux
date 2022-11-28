@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { actGetPlayer } from '../redux/actions';
 import initGame from '../service/localStoragePlayer';
-import logo from '../trivia.png';
-import '../Components/styleSheet/Login.css';
+import logo from '../img/trivia.png';
+import './styleSheet/Login.css';
 
 class Login extends React.Component {
   state = {

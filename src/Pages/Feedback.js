@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { FaRegGrinBeamSweat } from 'react-icons/fa';
 import { RiEmotionSadLine } from 'react-icons/ri';
 import Header from '../Components/Header';
-import '../Components/styleSheet/Feedback.css';
+import './styleSheet/Feedback.css';
 
 class Feedback extends React.Component {
   render() {
