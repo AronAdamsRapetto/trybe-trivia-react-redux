@@ -21,7 +21,7 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0"
   },
-  "homepage": "https://aronadamsrapetto.github.io/trivia-game",
+  "homepage": "https://aronadamsrapetto.github.io/trybe-trivia-react-redux",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
