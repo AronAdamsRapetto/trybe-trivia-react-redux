@@ -19,8 +19,6 @@ A base de dados utilizada foi uma API de perguntas e respostas.
 https://opentdb.com/api_token.php?command=request
 ```
 
-⚠️ A inferface para dispositivos de telas menores está em desnvolvimento.⚠️
-
 ## Executando o projeto
 ---
 #### Com Docker
